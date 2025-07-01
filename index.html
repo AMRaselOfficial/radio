@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Live</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <div class="chat-container">
+    <h1>Live</h1>
+    <div class="audio-player">
+      <audio controls autoplay>
+        <source src="https://served-processes-exhaust-accompanied.trycloudflare.com/live" type="audio/mpeg">
+        Your browser does not support the audio element.
+      </audio>
+    </div>
+    <div id="notification-box">
+      <h2>Admin Message</h2>
+      <div id="notifications"></div>
+    </div>
+    <div id="chat-box"></div>
+    <div class="input-container">
+      <input type="text" id="message-input" placeholder="Type your message..." maxlength="100">
+      <button id="send-button">Send</button>
+    </div>
+  </div>
+
+  <!-- Firebase and app logic -->
+  <script type="module" src="app.js"></script>
+</body>
+</html>
