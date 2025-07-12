@@ -9,7 +9,7 @@ let clients = [];
 // Start FFmpeg process once to stream the song.mp3 file
 const ffmpeg = spawn('ffmpeg', [
   '-re',           // Read input at native frame rate (simulate live)
-  '-i', 'song.mp3', // Input file - make sure this file is in project root
+  '-i', 'https://www.dropbox.com/scl/fi/2h2u8wwq62rr384xm13s3/song.mp3?rlkey=hkbujwxtv2wivz38ajoic6ojd&st=ei2ahfbp&dl=1', // Input file - make sure this file is in project root
   '-f', 'mp3',     // Output format MP3
   'pipe:1'         // Pipe output to stdout
 ]);
