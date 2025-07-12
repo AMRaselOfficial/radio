@@ -1,0 +1,3 @@
+User-agent: *
+Allow: /
+Sitemap: https://amraselofficial.github.io/radio/sitemap.xml
