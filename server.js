@@ -19,8 +19,9 @@ app.get('/ping', (req, res) => {
 
 // Stream MP3 with FFmpeg
 const ffmpeg = spawn('ffmpeg', [
+  '-stream_loop', '-1', // 🔁 Loop forever
   '-re',
-  '-i', 'https://www.dropbox.com/scl/fi/2h2u8wwq62rr384xm13s3/song.mp3?rlkey=hkbujwxtv2wivz38ajoic6ojd&st=ei2ahfbp&dl=1', // Your local file — make sure it's under 100MB for Render
+  '-i', 'https://www.dropbox.com/scl/fi/2h2u8wwq62rr384xm13s3/song.mp3?rlkey=hkbujwxtv2wivz38ajoic6ojd&st=ei2ahfbp&dl=1',
   '-f', 'mp3',
   'pipe:1'
 ]);
