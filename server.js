@@ -21,7 +21,7 @@ app.get('/ping', (req, res) => {
 const ffmpeg = spawn('ffmpeg', [
   '-stream_loop', '-1', // 🔁 Loop forever
   '-re',
-  '-i', 'https://www.dropbox.com/scl/fi/u1tsi8or0j2ki4w33vg2a/Night-Owls-12-hours.mp3?rlkey=sr9fsl22pk0kmzhkl3k3pa9h9&st=ffrkrq8d&dl=1',
+  '-i', 'https://www.dropbox.com/scl/fi/naeibn7wxv2j2n3prn4mn/Best-of-CSB.mp3?rlkey=45csetg94mzombs8kgj6boiff&st=reneom65&dl=1',
   '-f', 'mp3',
   'pipe:1'
 ]);
