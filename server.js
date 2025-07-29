@@ -21,7 +21,7 @@ app.get('/ping', (req, res) => {
 const ffmpeg = spawn('ffmpeg', [
   '-stream_loop', '-1', // 🔁 Loop forever
   '-re',
-  '-i', 'https://www.dropbox.com/scl/fi/wvu8r0v1dh4u2rh1d1982/Bengali-Lofi-Songs-Audio-Jukebox-SVF-Music.mp3?rlkey=tsw2bgym80dicrygy3kt1i57k&st=73i0je6f&dl=1',
+  '-i', 'https://www.dropbox.com/scl/fi/lovvfj4uie9zjdqdxiyfd/YouTubers-Playlist-2022.mp3?rlkey=it8jk7qkiqm6lz46srehzc84l&st=bttgjxt4&dl=1',
   '-f', 'mp3',
   'pipe:1'
 ]);
