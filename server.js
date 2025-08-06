@@ -21,7 +21,7 @@ app.get('/ping', (req, res) => {
 const ffmpeg = spawn('ffmpeg', [
   '-stream_loop', '-1', // 🔁 Loop forever
   '-re',
-  '-i', 'https://www.dropbox.com/scl/fi/z1bv06l2ao11q9ksmyl8w/You-re-listening-to-AM-Rasel-s-Official-Radio.mp3?rlkey=6jl6m2qapzvgnqv38ihl6wthm&st=qvtppz23&dl=1',
+  '-i', 'https://www.dropbox.com/scl/fi/9zi7uw4w56utgdcw15nje/Best-Old-Songs-Of-1950s-1990s-old-songs-but-lofi-remix-2021.mp3?rlkey=4x50yxtne0xshktwgakfxqxyg&st=oozotof2&dl=1',
   '-f', 'mp3',
   'pipe:1'
 ]);
