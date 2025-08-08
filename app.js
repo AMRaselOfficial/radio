@@ -21,8 +21,6 @@ const notificationBox = document.getElementById('notifications');
 const messageInput = document.getElementById('message-input');
 const sendButton = document.getElementById('send-button');
 
-const userName = "User";  // All users appear as "Listener"
-
 // Listen for new chat messages (Firestore real-time)
 const messagesCollection = collection(db, "messages");
 const messagesQuery = query(messagesCollection, orderBy('timestamp'));
