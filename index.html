@@ -1,42 +1,42 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<!-- META INFO -->
-<meta charset="UTF-8" />
-<meta name="viewport" content="width=device-width, initial-scale=1.0" />
-<title>AM Rasel's Official Radio</title>
-<meta name="description" content="Tune into AM Rasel's Official Radio – Where the vibes never stop!" />
-<meta name="theme-color" content="#0a0a23" />
-<!-- FAVICON FOR BROWSER TAB -->
-<link rel="icon" type="image/x-icon" href="/favicon.ico" />
-<link rel="shortcut icon" href="/favicon.ico" type="image/x-icon" />
-<!-- APP ICONS FOR ANDROID / WINDOWS -->
-<link rel="icon" type="image/png" sizes="192x192" href="/icon-192.png" />
-<link rel="icon" type="image/png" sizes="512x512" href="/icon-512.png" />
-<!-- APP ICONS FOR iOS (IPHONE / IPAD) -->
-<link rel="apple-touch-icon" sizes="180x180" href="/icon-192.png" />
-<meta name="apple-mobile-web-app-capable" content="yes" />
-<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
-<meta name="apple-mobile-web-app-title" content="AM Radio" />
-<!-- TWITTER CARD SUPPORT -->
-<meta name="twitter:card" content="summary_large_image" />
-<meta name="twitter:title" content="AM Rasel's Official Radio" />
-<meta name="twitter:description" content="Tune into the beat of your vibe! 🎧" />
-<meta name="twitter:image" content="https://amraselofficial.github.io/radio/og-image.png" />
-<!-- MANIFEST FOR WEB APP INSTALLATION -->
-<link rel="manifest" href="/manifest.json" />
-<link rel="stylesheet" href="style.css">
-<!-- SEO Meta Tags -->
-<meta name="description" content="Live 24/7 radio streaming. Listen to MP3 audio from anywhere online. No ads, just music.">
-<meta name="keywords" content="online radio, mp3 streaming, GitHub radio, Rasel radio, AMRaselOfficial, TV, Abdul, Momin, Rasel, Abdul Momin Rasel, AMRasel, AM, Official, RaselEdit, music server, render radio">
-<meta name="author" content="Rasel">
-<meta name="robots" content="index, follow">
-<meta property="og:title" content="Rasel's Online Radio" />
-<meta property="og:description" content="Listen to free live 24/7 MP3 radio streaming online." />
-<meta name="google-site-verification" content="jArhpaE5w4mJPIqyQfbHQMN4VLcuBOnDeXnAIj0-WM8" />
-<meta property="og:url" content="https://amraselofficial.github.io/radio/" />
-<meta property="og:type" content="website" />
-</head>
+  <!-- META INFO -->
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>AM Rasel's Official Radio</title>
+  <meta name="description" content="Tune into AM Rasel's Official Radio – Where the vibes never stop!" />
+  <meta name="theme-color" content="#0a0a23" />
+  <!-- FAVICON FOR BROWSER TAB -->
+  <link rel="icon" type="image/x-icon" href="/favicon.ico" />
+  <link rel="shortcut icon" href="/favicon.ico" type="image/x-icon" />
+  <!-- APP ICONS FOR ANDROID / WINDOWS -->
+  <link rel="icon" type="image/png" sizes="192x192" href="/icon-192.png" />
+  <link rel="icon" type="image/png" sizes="512x512" href="/icon-512.png" />
+  <!-- APP ICONS FOR iOS (IPHONE / IPAD) -->
+  <link rel="apple-touch-icon" sizes="180x180" href="/icon-192.png" />
+  <meta name="apple-mobile-web-app-capable" content="yes" />
+  <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
+  <meta name="apple-mobile-web-app-title" content="AM Radio" />
+  <!-- TWITTER CARD SUPPORT -->
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="AM Rasel's Official Radio" />
+  <meta name="twitter:description" content="Tune into the beat of your vibe! 🎧" />
+  <meta name="twitter:image" content="https://amraselofficial.github.io/radio/og-image.png" />
+  <!-- MANIFEST FOR WEB APP INSTALLATION -->
+  <link rel="manifest" href="/manifest.json" />
+  <link rel="stylesheet" href="style.css">
+  <!-- SEO Meta Tags -->
+  <meta name="description" content="Live 24/7 radio streaming. Listen to MP3 audio from anywhere online. No ads, just music.">
+  <meta name="keywords" content="online radio, mp3 streaming, GitHub radio, Rasel radio, AMRaselOfficial, TV, Abdul, Momin, Rasel, Abdul Momin Rasel, AMRasel, AM, Official, RaselEdit, music server, render radio">
+  <meta name="author" content="Rasel">
+  <meta name="robots" content="index, follow">
+  <meta property="og:title" content="Rasel's Online Radio" />
+  <meta property="og:description" content="Listen to free live 24/7 MP3 radio streaming online." />
+  <meta name="google-site-verification" content="jArhpaE5w4mJPIqyQfbHQMN4VLcuBOnDeXnAIj0-WM8" />
+  <meta property="og:url" content="https://amraselofficial.github.io/radio/" />
+  <meta property="og:type" content="website" />
+  </head>
 <body>
   <div class="chat-container">
     <h1>Online 🟢</h1>
@@ -47,23 +47,67 @@
       </audio>
     </div>
     <div id="notification-box">
-      <h2>Daily Show</h2>
+      <center><h2>Admin Message</h2></center>
       <div id="notifications"></div>
     </div>
-    <div id="chat-box"></div>
-    <div class="input-container">
-      <input type="text" id="message-input" placeholder="Type your message..." maxlength="100">
-      <button id="send-button">Send</button>
-    </div><br><br>
+    <div id="chat-box"><!-- Messages will appear here --></div>
+    <div>
+    <input type="text" id="message-input" placeholder="Write a message..." />
+    <button id="send-button" onclick="sendMessage()">Send</button>
     </div>
-  <!-- AD Banner at Bottom Right -->
-  <div class="bottom-ad" id="bottom-ad">
-  <button class="close-bottom-ad" onclick="document.getElementById('bottom-ad').style.display='none'">✖</button>
-  <a href="https://broker-qx.pro/sign-up/?lid=1196466" target="_blank">
-  <img src="https://static.quotex.io/files/6_en/468_60.jpg" alt="Ad Banner">
-  </a>
   </div>
   <!-- Firebase and app logic -->
   <script type="module" src="app.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/9.6.1/firebase-app-compat.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/9.6.1/firebase-database-compat.js"></script>
+  <script>
+    const firebaseConfig = {
+      apiKey: "AIzaSyAn8kADK2SbKClaEZZ1QVmw8ja5jI6s16A",
+      authDomain: "livechat-amraselofficial.firebaseapp.com",
+      databaseURL: "https://livechat-amraselofficial-default-rtdb.asia-southeast1.firebasedatabase.app",
+      projectId: "livechat-amraselofficial",
+      storageBucket: "livechat-amraselofficial.appspot.com",
+      messagingSenderId: "271740919161",
+      appId: "1:271740919161:web:189b1f0857eb91fdaa23a8",
+      measurementId: "G-TWEER2R26W"
+    };
+  
+    // ✅ Initialize Firebase
+    firebase.initializeApp(firebaseConfig);
+    const db = firebase.database();
+    const messagesRef = db.ref("messages");
+    
+    // ✅ Load only last 300 messages
+    messagesRef.limitToLast(300).on("child_added", (snapshot) => {
+    const data = snapshot.val();
+    const messageElement = document.createElement("div");
+    messageElement.classList.add("chat-message");
+    
+    messageElement.innerHTML = `
+    <strong>${data.sender}:</strong> ${data.text}
+    `;
+    
+    document.getElementById("chat-box").appendChild(messageElement);
+    
+      // Auto-scroll
+      const chatBox = document.getElementById("chat-box");
+      chatBox.scrollTop = chatBox.scrollHeight;
+    });
+  
+    // ✅ Send message function
+    function sendMessage() {
+      const input = document.getElementById("message-input");
+      const text = input.value.trim();
+      if (!text) return;
+  
+      let sender = localStorage.getItem("sender");
+      if (!sender) {
+        sender = prompt("What's your name?");
+        localStorage.setItem("sender", sender);
+      }
+      messagesRef.push({ sender, text });
+      input.value = "";
+    }
+  </script>
 </body>
 </html>
