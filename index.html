@@ -84,7 +84,7 @@
     messageElement.classList.add("chat-message");
     
     messageElement.innerHTML = `
-    <strong>${data.sender}:</strong> ${data.text}
+    <strong>${data.username}:</strong> ${data.message}
     `;
     
     document.getElementById("chat-box").appendChild(messageElement);
@@ -97,15 +97,15 @@
     // ✅ Send message function
     function sendMessage() {
       const input = document.getElementById("message-input");
-      const text = input.value.trim();
-      if (!text) return;
+      const message = input.value.trim();
+      if (!message) return;
   
-      let sender = localStorage.getItem("sender");
-      if (!sender) {
-        sender = prompt("What's your name?");
-        localStorage.setItem("sender", sender);
+      let username = localStorage.getItem("username");
+      if (!username) {
+        username = prompt("What's your name?");
+        localStorage.setItem("username", username);
       }
-      messagesRef.push({ sender, text });
+      messagesRef.push({ username, message});
       input.value = "";
     }
   </script>
