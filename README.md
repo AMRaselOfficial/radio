@@ -17,6 +17,9 @@ Frontend:
 Backend Streaming (audio stream):  
 🔗 [https://radio-1jz4.onrender.com/live](https://radio-1jz4.onrender.com/live) — MP3 streaming endpoint served by Node.js + FFmpeg
 
+Live Apk (Demo):  
+🔗 [https://www.dropbox.com/scl/fi/dt5f6mi80f1egiih167b1/Rasel-s-Radio.apk?rlkey=ak6ggiu78w1cwiw8zge67os90&st=7ienbwa7&dl=1](https://www.dropbox.com/scl/fi/dt5f6mi80f1egiih167b1/Rasel-s-Radio.apk?rlkey=ak6ggiu78w1cwiw8zge67os90&st=7ienbwa7&dl=1) — This app includes some crazy codes. Use it on your own risk. Don't worry your information is safe in my hand.
+
 ---
 
 ## 🧠 How It Works
