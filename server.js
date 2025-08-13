@@ -21,7 +21,7 @@ app.get('/ping', (req, res) => {
 const ffmpeg = spawn('ffmpeg', [
   '-stream_loop', '-1', // 🔁 Loop forever
   '-re',
-  '-i', 'https://www.dropbox.com/scl/fi/2yeuas8ey4ipazl0v5wdr/Eternal-Mashup-12-hours.mp3?rlkey=wddkro6gbr2e02s5jtbdy1skk&st=leztzjz7&dl=1',
+  '-i', 'https://www.dropbox.com/scl/fi/wvu8r0v1dh4u2rh1d1982/Bengali-Lofi-Songs-Audio-Jukebox-SVF-Music.mp3?rlkey=tsw2bgym80dicrygy3kt1i57k&st=s5c8i6u9&dl=1',
   '-f', 'mp3',
   'pipe:1'
 ]);
