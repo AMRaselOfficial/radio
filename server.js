@@ -21,7 +21,7 @@ app.get('/ping', (req, res) => {
 const ffmpeg = spawn('ffmpeg', [
   '-stream_loop', '-1', // 🔁 Loop forever
   '-re',
-  '-i', 'https://www.dropbox.com/scl/fi/9zi7uw4w56utgdcw15nje/Best-Old-Songs-Of-1950s-1990s-old-songs-but-lofi-remix-2021.mp3?rlkey=4x50yxtne0xshktwgakfxqxyg&st=9evw9fc0&dl=1',
+  '-i', 'https://www.dropbox.com/scl/fi/t8s2oy8iy7m3i2apu5bnw/stream.mp3?rlkey=59awdc3gf7n5jip7s5hnirykm&st=2b99pe42&dl=1',
   '-f', 'mp3',
   'pipe:1'
 ]);
