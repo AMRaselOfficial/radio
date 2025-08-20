@@ -21,7 +21,7 @@ app.get('/ping', (req, res) => {
 const ffmpeg = spawn('ffmpeg', [
   '-stream_loop', '-1', // 🔁 Loop forever
   '-re',
-  '-i', 'https://www.dropbox.com/scl/fi/z1bv06l2ao11q9ksmyl8w/You-re-listening-to-AM-Rasel-s-Official-Radio.mp3?rlkey=6jl6m2qapzvgnqv38ihl6wthm&st=1rx9zwbh&dl=1',
+  '-i', 'https://www.dropbox.com/scl/fi/1luwhuxrgsoyqeld9ix8v/Bollywood-Hits-2.0.mp3?rlkey=90jgb5nhr81bt1j8rzsrqdfza&st=tutyon0p&dl=1',
   '-f', 'mp3',
   'pipe:1'
 ]);
