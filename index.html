@@ -38,6 +38,7 @@
   <meta property="og:type" content="website" />
   </head>
 <body>
+  <canvas id="background-canvas"></canvas>
   <button id="theme-toggle" class="theme-btn">🌙 Dark</button>
   <div class="chat-container">
     <h1>Online 🟢</h1>
@@ -132,5 +133,74 @@
   }
   });
   </script>
+	<script type="text/javascript">
+const canvas = document.getElementById("background-canvas");
+const ctx = canvas.getContext("2d");
+
+let particles = [];
+const colors = ["#00ffe5", "#1adb54", "#ff0077", "#ffaa00", "#0066ff"];
+
+function resizeCanvas() {
+  canvas.width = window.innerWidth;
+  canvas.height = window.innerHeight;
+}
+window.addEventListener("resize", resizeCanvas);
+resizeCanvas();
+
+class Particle {
+  constructor() {
+    this.reset();
+  }
+  reset() {
+    this.x = Math.random() * canvas.width;
+    this.y = Math.random() * canvas.height;
+    this.size = Math.random() * 4 + 2;
+    this.life = Math.random() * 200 + 100;
+    this.remainingLife = this.life;
+    this.color = colors[Math.floor(Math.random() * colors.length)];
+    this.vx = (Math.random() - 0.5) * 1.0;
+    this.vy = (Math.random() - 0.5) * 1.0;
+  }
+  update() {
+    this.x += this.vx;
+    this.y += this.vy;
+    this.remainingLife--;
+    if (this.remainingLife <= 0) this.reset();
+  }
+  draw() {
+    const lifeRatio = this.remainingLife / this.life;
+    let alpha = 1;
+    if (lifeRatio > 0.8) alpha = 1 - (lifeRatio - 0.8) * 5; // fade in
+    else if (lifeRatio < 0.2) alpha = lifeRatio * 5; // fade out
+
+    ctx.beginPath();
+    ctx.arc(this.x, this.y, this.size, 0, Math.PI * 2);
+    ctx.fillStyle = this.hexToRgba(this.color, alpha);
+    ctx.shadowColor = this.color;
+    ctx.shadowBlur = 20 * alpha;
+    ctx.fill();
+    ctx.shadowBlur = 0;
+  }
+  hexToRgba(hex, alpha) {
+    const bigint = parseInt(hex.slice(1), 16);
+    const r = (bigint >> 16) & 255;
+    const g = (bigint >> 8) & 255;
+    const b = bigint & 255;
+    return `rgba(${r},${g},${b},${alpha})`;
+  }
+}
+
+function createParticles(num) {
+  for (let i = 0; i < num; i++) particles.push(new Particle());
+}
+createParticles(80); // more stars for full screen
+
+function animate() {
+  ctx.clearRect(0, 0, canvas.width, canvas.height);
+  particles.forEach(p => { p.update(); p.draw(); });
+  requestAnimationFrame(animate);
+}
+animate();
+	</script>
 </body>
 </html>
