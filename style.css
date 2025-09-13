@@ -9,7 +9,15 @@ body {
   min-height: 100vh;
   transition: background-color 0.3s, color 0.3s; /* Smooth theme transition */
 }
-
+ #background-canvas {
+ position: fixed;
+ top: 0;
+ left: 0;
+ width: 100%;
+ height: 100%;
+ z-index: -1; /* behind everything */
+ background: inherit; /* match theme background */
+ }
 .chat-container {
   background-color: #fff;
   border-radius: 8px;
