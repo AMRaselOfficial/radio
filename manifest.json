@@ -1,20 +1,20 @@
 {
-  "name": "AM Rasel's Official Radio",
-  "short_name": "AMRASEL's Radio",
-  "start_url": "/",
+  "name": "AM Rasel Radio",
+  "short_name": "Radio",
+  "start_url": "/radio/index.html",
   "display": "standalone",
-  "background_color": "#0a0a23",
-  "theme_color": "#0a0a23",
+  "background_color": "#ffffff",
+  "theme_color": "#3367D6",  // change as you like
   "icons": [
     {
-      "src": "icon-192.png",
-      "type": "image/png",
-      "sizes": "192x192"
+      "src": "/radio/icons/icon-192x192.png",
+      "sizes": "192x192",
+      "type": "image/png"
     },
     {
-      "src": "icon-512.png",
-      "type": "image/png",
-      "sizes": "512x512"
+      "src": "/radio/icons/icon-512x512.png",
+      "sizes": "512x512",
+      "type": "image/png"
     }
   ]
 }
