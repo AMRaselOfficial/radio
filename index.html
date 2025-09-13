@@ -133,13 +133,14 @@
   }
   });
   </script>
-	<script type="text/javascript">
+<script>
 const canvas = document.getElementById("background-canvas");
 const ctx = canvas.getContext("2d");
 
 let particles = [];
 const colors = ["#00ffe5", "#1adb54", "#ff0077", "#ffaa00", "#0066ff"];
 
+// ✅ Make sure canvas always fills screen
 function resizeCanvas() {
   canvas.width = window.innerWidth;
   canvas.height = window.innerHeight;
@@ -155,7 +156,7 @@ class Particle {
     this.x = Math.random() * canvas.width;
     this.y = Math.random() * canvas.height;
     this.size = Math.random() * 4 + 2;
-    this.life = Math.random() * 200 + 100;
+    this.life = Math.random() * 200 + 100; // total lifespan
     this.remainingLife = this.life;
     this.color = colors[Math.floor(Math.random() * colors.length)];
     this.vx = (Math.random() - 0.5) * 1.0;
@@ -165,13 +166,21 @@ class Particle {
     this.x += this.vx;
     this.y += this.vy;
     this.remainingLife--;
-    if (this.remainingLife <= 0) this.reset();
+
+    if (this.remainingLife <= 0) {
+      this.reset();
+    }
   }
   draw() {
     const lifeRatio = this.remainingLife / this.life;
     let alpha = 1;
-    if (lifeRatio > 0.8) alpha = 1 - (lifeRatio - 0.8) * 5; // fade in
-    else if (lifeRatio < 0.2) alpha = lifeRatio * 5; // fade out
+
+    // ✅ Smooth fade-in (first 20%) & fade-out (last 20%)
+    if (lifeRatio > 0.8) {
+      alpha = 1 - (lifeRatio - 0.8) * 5;
+    } else if (lifeRatio < 0.2) {
+      alpha = lifeRatio * 5;
+    }
 
     ctx.beginPath();
     ctx.arc(this.x, this.y, this.size, 0, Math.PI * 2);
@@ -191,16 +200,21 @@ class Particle {
 }
 
 function createParticles(num) {
-  for (let i = 0; i < num; i++) particles.push(new Particle());
+  for (let i = 0; i < num; i++) {
+    particles.push(new Particle());
+  }
 }
-createParticles(80); // more stars for full screen
+createParticles(80); // increase number for denser stars
 
 function animate() {
   ctx.clearRect(0, 0, canvas.width, canvas.height);
-  particles.forEach(p => { p.update(); p.draw(); });
+  particles.forEach(p => {
+    p.update();
+    p.draw();
+  });
   requestAnimationFrame(animate);
 }
 animate();
-	</script>
+</script>
 </body>
 </html>
