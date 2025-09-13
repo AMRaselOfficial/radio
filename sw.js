@@ -1,9 +1,9 @@
 const CACHE_NAME = 'rasel-radio-cache-v1';
 const urlsToCache = [
-  '/radio/index.html',
-  '/radio/',         // root of radio
-  '/radio/style.css',// if you have CSS
-  '/radio/script.js',// if you have JS
+  'index.html',
+  '/',         // root of radio
+  'style.css',// if you have CSS
+  'script.js',// if you have JS
   // you may want to cache your audio file or parts of it (if small)
 ];
 
