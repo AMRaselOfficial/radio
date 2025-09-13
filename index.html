@@ -24,7 +24,8 @@
   <meta name="twitter:description" content="Tune into the beat of your vibe! 🎧" />
   <meta name="twitter:image" content="https://amraselofficial.github.io/radio/og-image.png" />
   <!-- MANIFEST FOR WEB APP INSTALLATION -->
-  <link rel="manifest" href="/manifest.json" />
+  <link rel="manifest" href="/manifest.json">
+  <meta name="theme-color" content="#3367D6">
   <link rel="stylesheet" href="style.css">
   <!-- SEO Meta Tags -->
   <meta name="description" content="Live 24/7 radio streaming. Listen to MP3 audio from anywhere online. No ads, just music.">
@@ -215,6 +216,18 @@ function animate() {
   requestAnimationFrame(animate);
 }
 animate();
+</script>
+<script>
+  if ('serviceWorker' in navigator) {
+    window.addEventListener('load', function() {
+      navigator.serviceWorker.register('sw.js')
+        .then(function(registration) {
+          console.log('ServiceWorker registered with scope:', registration.scope);
+        }).catch(function(error) {
+          console.error('ServiceWorker registration failed:', error);
+        });
+    });
+  }
 </script>
 </body>
 </html>
