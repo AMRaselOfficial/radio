@@ -21,7 +21,7 @@ app.get('/ping', (req, res) => {
 const ffmpeg = spawn('ffmpeg', [
   '-stream_loop', '-1', // 🔁 Loop forever
   '-re',
-  '-i', 'https://www.dropbox.com/scl/fi/z7yzf4zznh4xuzxukkrqk/Columbina-s-Lullaby-Genshin-Impact.mp3?rlkey=h2pb7htffzzzjhtbas82qci4p&st=zy65fcdv&dl=1',
+  '-i', 'https://www.dropbox.com/scl/fi/9zi7uw4w56utgdcw15nje/Best-Old-Songs-Of-1950s-1990s-old-songs-but-lofi-remix-2021.mp3?rlkey=4x50yxtne0xshktwgakfxqxyg&st=fnfi43fj&dl=1',
   '-f', 'mp3',
   'pipe:1'
 ]);
