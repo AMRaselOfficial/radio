@@ -7,6 +7,11 @@
   <title>AM Rasel's Official Radio</title>
   <meta name="description" content="Tune into AM Rasel's Official Radio – Where the vibes never stop!" />
   <meta name="theme-color" content="#0a0a23" />
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Comic+Relief:wght@400;700&display=swap" rel="stylesheet">
   <!-- FAVICON FOR BROWSER TAB -->
   <link rel="icon" type="image/x-icon" href="/favicon.ico" />
   <link rel="shortcut icon" href="/favicon.ico" type="image/x-icon" />
@@ -51,7 +56,7 @@
     </div>
     <div id="notification-box">
       <center><h2>Admin Message</h2></center>
-      <div id="notifications"></div>
+      <div id="notifications"><!-- Notifications will appear here--></div>
     </div>
     <div id="chat-box"><!-- Messages will appear here --></div>
 	<div class="input-container">
@@ -111,6 +116,24 @@
       messagesRef.push({ username, message});
       input.value = "";
     }
+  </script>
+  <script>
+  // ✅ Function to add a new notification
+  function addNotification(text) {
+  const notificationBox = document.getElementById("notifications");
+  const note = document.createElement("div");
+  note.classList.add("notification");
+  note.textContent = text;
+  
+  notificationBox.appendChild(note);
+  
+  // ✅ Auto-scroll to bottom (latest notification visible)
+  notificationBox.scrollTop = notificationBox.scrollHeight;
+  }
+  
+  // ✅ Example: You can test by calling
+  // addNotification("Welcome to AM Rasel Radio!");
+  // addNotification("Server will restart at 3PM!");
   </script>
   <!-- Dark Theme JS-->
   <script>

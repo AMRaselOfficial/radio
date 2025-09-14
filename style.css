@@ -1,5 +1,5 @@
 body {
-  font-family: Arial, sans-serif;
+  font-family: 'Comic Relief', sans-serif;
   background-color: #f4f4f4;
   margin: 0;
   padding: 0;
@@ -72,9 +72,14 @@ h1, h2 {
   margin-bottom: 15px;
 }
 #notifications {
-  max-height: 100px;
+  background-color: #ccc;
+  border-left:2px solid #ccc;
+  border-radius: 5px;
+  height: 35px;
   overflow-y: auto;
-  margin-top: 10px;
+  display: flex;
+  flex-direction: column-reverse;
+  padding-right: 5px;
 }
 .notification {
   padding: 5px;
@@ -171,6 +176,10 @@ body.dark #chat-box {
 body.dark #notification-box {
   background-color: #1e1e1e;
   border: 2px solid #00ffe5;
+}
+body.dark #notifications {
+  background-color: #363636;
+  border-left:2px solid #363636;
 }
 body.dark #message-input {
   background: #2a2a2a;
