@@ -6,16 +6,16 @@ body {
   min-height: 100vh;
   display: flex;
   justify-content: center;
-  align-items: center;
+  align-items: flex-start;
   transition: background-color 0.3s, color 0.3s;
-  overflow: hidden; /* prevent scrollbars from particles */
+  overflow-x: hidden;
 }
 #background-canvas {
   position: fixed;
   top: 0;
   left: 0;
-  width: 100vw;   /* full screen width */
-  height: 100vh;  /* full screen height */
+  width: 100vw;
+  height: 100vh;
   z-index: -1;
 }
 .chat-container {
@@ -26,6 +26,7 @@ body {
   max-width: 350px;
   padding: 15px;
   box-sizing: border-box;
+  margin: 20px auto;
   transition: background-color 0.3s, box-shadow 0.3s;
 }
 
