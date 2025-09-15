@@ -192,3 +192,16 @@ body.dark #message-input:focus {
 body.dark .chat-message strong {
   color: #00ffe5;
 }
+
+/* Desktop */
+@media (min-width: 768px) {
+	.chat-container {
+	  max-width: 500px;
+  }
+}
+/* Mobile */
+@media (max-width: 767px) {
+	.chat-container {
+	  max-width: 350px;
+  }
+}
