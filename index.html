@@ -47,15 +47,80 @@
   <canvas id="background-canvas"></canvas>
   <button id="theme-toggle" class="theme-btn">🌙 Dark</button>
   <div class="chat-container">
-    <h1>Online 🟢</h1>
-    <div class="audio-player">
-      <audio controls autoplay>
-        <source src="https://radio-1jz4.onrender.com/live" type="audio/mpeg">
-        Your browser does not support the audio element.
-      </audio>
-    </div>
+    <h1>AM Rasel's Radio</h1>
+    <center><div class="audio-player">
+    <audio id="radio-audio">
+    <source src="https://radio-1jz4.onrender.com/live" type="audio/mpeg">
+    Your browser does not support the audio element.
+    </audio>
+    <button id="play-btn" class="play-button"></button>
+    </div></center>
+    <style type="text/css">
+    /* 🎵 Custom Play Button */
+    .play-button {
+    width: 70px;
+    height: 70px;
+    border: none;
+    border-radius: 50%;
+    background: #00ffe5;
+    cursor: pointer;
+    outline: none;
+    position: relative;
+    transition: transform 0.2s, background 0.3s;
+    box-shadow: 0 0 15px rgba(0, 255, 229, 0.5);
+    }
+    
+    /* Icon (play triangle) */
+    .play-button::before {
+    content: '';
+    position: absolute;
+    left: 29px;
+    top: 20px;
+    width: 0;
+    height: 0;
+    border-left: 18px solid #000;
+    border-top: 12px solid transparent;
+    border-bottom: 12px solid transparent;
+    transition: all 0.3s ease;
+    }
+    
+    /* Pause state (two vertical bars) */
+    .playing::before {
+    border: none;
+    background: #000;
+    width: 6px;
+    height: 24px;
+    left: 25px;
+    top: 23px;
+    box-shadow: 14px 0 0 #000;
+    }
+    
+    /* Hover effect */
+    .play-button:hover {
+    transform: scale(1.1);
+    background: #1adb54;
+    }
+    </style>
+    <script>
+    const audio = document.getElementById("radio-audio");
+    const playBtn = document.getElementById("play-btn");
+    
+    let isPlaying = false;
+    
+    playBtn.addEventListener("click", () => {
+    if (!isPlaying) {
+    audio.play();
+    playBtn.classList.add("playing");
+    isPlaying = true;
+    } else {
+    audio.pause();
+    playBtn.classList.remove("playing");
+    isPlaying = false;
+    }
+    });
+    </script>
     <div id="notification-box">
-      <center><h2>Admin Message</h2></center>
+      <center><h2>Admin Messages</h2></center>
       <div id="notifications"><!-- Notifications will appear here--></div>
     </div>
     <div id="chat-box"><!-- Messages will appear here --></div>
