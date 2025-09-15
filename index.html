@@ -68,14 +68,15 @@
     position: relative;
     transition: transform 0.2s, background 0.3s;
     box-shadow: 0 0 15px rgba(0, 255, 229, 0.5);
+    z-index: 1;
     }
     
-    /* Icon (play triangle) */
+    /* Play Triangle */
     .play-button::before {
     content: '';
     position: absolute;
     left: 29px;
-    top: 20px;
+    top: 22px;
     width: 0;
     height: 0;
     border-left: 18px solid #000;
@@ -84,7 +85,7 @@
     transition: all 0.3s ease;
     }
     
-    /* Pause state (two vertical bars) */
+    /* Pause (two bars) */
     .playing::before {
     border: none;
     background: #000;
@@ -95,10 +96,39 @@
     box-shadow: 14px 0 0 #000;
     }
     
-    /* Hover effect */
+    /* Hover */
     .play-button:hover {
     transform: scale(1.1);
     background: #1adb54;
+    }
+    
+    /* 🔊 Pulse animation when playing */
+    .playing::after {
+    content: '';
+    position: absolute;
+    width: 70px;
+    height: 70px;
+    border-radius: 50%;
+    background: rgba(0, 255, 229, 0.4);
+    left: 0;
+    top: 0;
+    z-index: -1;
+    animation: pulse 1.5s infinite;
+    }
+    
+    @keyframes pulse {
+    0% {
+    transform: scale(1);
+    opacity: 0.8;
+    }
+    70% {
+    transform: scale(1.6);
+    opacity: 0;
+    }
+    100% {
+    transform: scale(1);
+    opacity: 0;
+    }
     }
     </style>
     <script>
