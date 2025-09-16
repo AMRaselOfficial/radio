@@ -1,169 +1,95 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <!-- META INFO -->
+  <!-- ================= META INFO ================= -->
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>AM Rasel's Official Radio</title>
-  <meta name="description" content="Tune into AM Rasel's Official Radio – Where the vibes never stop!" />
-  <meta name="theme-color" content="#0a0a23" />
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Comic+Relief:wght@400;700&display=swap" rel="stylesheet">
-  <!-- FAVICON FOR BROWSER TAB -->
-  <link rel="icon" type="image/x-icon" href="/favicon.ico" />
-  <link rel="shortcut icon" href="/favicon.ico" type="image/x-icon" />
-  <!-- APP ICONS FOR ANDROID / WINDOWS -->
-  <link rel="icon" type="image/png" sizes="192x192" href="/icon-192.png" />
-  <link rel="icon" type="image/png" sizes="512x512" href="/icon-512.png" />
-  <!-- APP ICONS FOR iOS (IPHONE / IPAD) -->
-  <link rel="apple-touch-icon" sizes="180x180" href="/icon-192.png" />
-  <meta name="apple-mobile-web-app-capable" content="yes" />
-  <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
-  <meta name="apple-mobile-web-app-title" content="AM Radio" />
-  <!-- TWITTER CARD SUPPORT -->
-  <meta name="twitter:card" content="summary_large_image" />
-  <meta name="twitter:title" content="AM Rasel's Official Radio" />
-  <meta name="twitter:description" content="Tune into the beat of your vibe! 🎧" />
-  <meta name="twitter:image" content="https://amraselofficial.github.io/radio/og-image.png" />
-  <!-- MANIFEST FOR WEB APP INSTALLATION -->
-  <link rel="manifest" href="/manifest.json">
-  <meta name="theme-color" content="#3367D6">
-  <link rel="stylesheet" href="style.css">
-  <!-- SEO Meta Tags -->
+
+  <!-- SEO -->
   <meta name="description" content="Live 24/7 radio streaming. Listen to MP3 audio from anywhere online. No ads, just music.">
   <meta name="keywords" content="online radio, mp3 streaming, GitHub radio, Rasel radio, AMRaselOfficial, TV, Abdul, Momin, Rasel, Abdul Momin Rasel, AMRasel, AM, Official, RaselEdit, music server, render radio">
   <meta name="author" content="Rasel">
   <meta name="robots" content="index, follow">
+
+  <!-- Social & Preview -->
   <meta property="og:title" content="Rasel's Online Radio" />
   <meta property="og:description" content="Listen to free live 24/7 MP3 radio streaming online." />
-  <meta name="google-site-verification" content="jArhpaE5w4mJPIqyQfbHQMN4VLcuBOnDeXnAIj0-WM8" />
   <meta property="og:url" content="https://amraselofficial.github.io/radio/" />
   <meta property="og:type" content="website" />
-  </head>
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="AM Rasel's Official Radio" />
+  <meta name="twitter:description" content="Tune into the beat of your vibe! 🎧" />
+  <meta name="twitter:image" content="https://amraselofficial.github.io/radio/og-image.png" />
+  <meta name="google-site-verification" content="jArhpaE5w4mJPIqyQfbHQMN4VLcuBOnDeXnAIj0-WM8" />
+
+  <!-- Favicon -->
+  <link rel="icon" type="image/x-icon" href="/favicon.ico" />
+  <link rel="shortcut icon" href="/favicon.ico" type="image/x-icon" />
+
+  <!-- App Icons -->
+  <link rel="icon" type="image/png" sizes="192x192" href="/icon-192.png" />
+  <link rel="icon" type="image/png" sizes="512x512" href="/icon-512.png" />
+  <link rel="apple-touch-icon" sizes="180x180" href="/icon-192.png" />
+  <meta name="apple-mobile-web-app-capable" content="yes" />
+  <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
+  <meta name="apple-mobile-web-app-title" content="AM Radio" />
+
+  <!-- PWA -->
+  <link rel="manifest" href="/manifest.json" />
+  <meta name="theme-color" content="#3367D6" />
+
+  <!-- Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Comic+Relief:wght@400;700&display=swap" rel="stylesheet">
+
+  <!-- Styles -->
+  <link rel="stylesheet" href="styleV2.css">
+</head>
 <body>
+  <!-- ================= BACKGROUND CANVAS ================= -->
   <canvas id="background-canvas"></canvas>
+
+  <!-- Theme Toggle -->
   <button id="theme-toggle" class="theme-btn">🌙 Dark</button>
+
+  <!-- ================= MAIN CONTAINER ================= -->
   <div class="chat-container">
     <h1>AM Rasel's Radio</h1>
-    <center><div class="audio-player">
-    <audio id="radio-audio">
-    <source src="https://radio-1jz4.onrender.com/live" type="audio/mpeg">
-    Your browser does not support the audio element.
-    </audio>
-    <button id="play-btn" class="play-button"></button>
-    </div></center>
-    <style type="text/css">
-    /* 🎵 Custom Play Button */
-    .play-button {
-    width: 70px;
-    height: 70px;
-    border: none;
-    border-radius: 50%;
-    background: #00ffe5;
-    cursor: pointer;
-    outline: none;
-    position: relative;
-    transition: transform 0.2s, background 0.3s;
-    box-shadow: 0 0 15px rgba(0, 255, 229, 0.5);
-    z-index: 1;
-    }
-    
-    /* Play Triangle */
-    .play-button::before {
-    content: '';
-    position: absolute;
-    left: 29px;
-    top: 22px;
-    width: 0;
-    height: 0;
-    border-left: 18px solid #000;
-    border-top: 12px solid transparent;
-    border-bottom: 12px solid transparent;
-    transition: all 0.3s ease;
-    }
-    
-    /* Pause (two bars) */
-    .playing::before {
-    border: none;
-    background: #000;
-    width: 6px;
-    height: 24px;
-    left: 25px;
-    top: 23px;
-    box-shadow: 14px 0 0 #000;
-    }
-    
-    /* Hover */
-    .play-button:hover {
-    transform: scale(1.1);
-    background: #1adb54;
-    }
-    
-    /* 🔊 Pulse animation when playing */
-    .playing::after {
-    content: '';
-    position: absolute;
-    width: 70px;
-    height: 70px;
-    border-radius: 50%;
-    background: rgba(0, 255, 229, 0.4);
-    left: 0;
-    top: 0;
-    z-index: -1;
-    animation: pulse 1.5s infinite;
-    }
-    
-    @keyframes pulse {
-    0% {
-    transform: scale(1);
-    opacity: 0.8;
-    }
-    70% {
-    transform: scale(1.6);
-    opacity: 0;
-    }
-    100% {
-    transform: scale(1);
-    opacity: 0;
-    }
-    }
-    </style>
-    <script>
-    const audio = document.getElementById("radio-audio");
-    const playBtn = document.getElementById("play-btn");
-    
-    let isPlaying = false;
-    
-    playBtn.addEventListener("click", () => {
-    if (!isPlaying) {
-    audio.play();
-    playBtn.classList.add("playing");
-    isPlaying = true;
-    } else {
-    audio.pause();
-    playBtn.classList.remove("playing");
-    isPlaying = false;
-    }
-    });
-    </script>
-    <div id="notification-box">
-      <center><h2>Admin Messages</h2></center>
-      <div id="notifications"><!-- Notifications will appear here--></div>
+
+    <!-- Audio Player -->
+    <div class="audio-player">
+      <audio id="radio-audio">
+        <source src="https://radio-1jz4.onrender.com/live" type="audio/mpeg">
+        Your browser does not support the audio element.
+      </audio>
+      <button id="play-btn" class="play-button"></button>
     </div>
-    <div id="chat-box"><!-- Messages will appear here --></div>
-	<div class="input-container">
-		<input type="text" id="message-input" placeholder="Write a message..." />
-		<button id="send-button" onclick="sendMessage()">Send</button>
-	</div>
+
+    <!-- Notifications -->
+    <div id="notification-box">
+      <h2>Admin Messages</h2>
+      <div id="notifications"><!-- Notifications will load here --></div>
+    </div>
+
+    <!-- Chat Messages -->
+    <div id="chat-box"><!-- Chat messages will load here --></div>
+
+    <!-- Input -->
+    <div class="input-container">
+      <input type="text" id="message-input" placeholder="Write a message..." />
+      <button id="send-button" onclick="sendMessage()">Send</button>
+    </div>
   </div>
-  <!-- Firebase and app logic -->
-  <script type="module" src="app.js"></script>
+
+  <!-- ================= FIREBASE SCRIPTS ================= -->
   <script src="https://www.gstatic.com/firebasejs/9.6.1/firebase-app-compat.js"></script>
   <script src="https://www.gstatic.com/firebasejs/9.6.1/firebase-database-compat.js"></script>
+  <script type="module" src="app.js"></script>
+  
   <script>
+    // Firebase config
     const firebaseConfig = {
       apiKey: "AIzaSyAn8kADK2SbKClaEZZ1QVmw8ja5jI6s16A",
       authDomain: "livechat-amraselofficial.firebaseapp.com",
@@ -212,6 +138,8 @@
       input.value = "";
     }
   </script>
+
+  <!-- ================= NOTIFICATIONS ================= -->
   <script>
   // ✅ Function to add a new notification
   function addNotification(text) {
@@ -227,125 +155,132 @@
   }
   
   // ✅ Example: You can test by calling
-  // addNotification("Welcome to AM Rasel Radio!");
-  // addNotification("Server will restart at 3PM!");
+  addNotification("Welcome to AM Rasel Radio!");
   </script>
-  <!-- Dark Theme JS-->
+
+  <!-- ================= AUDIO PLAYER ================= -->
   <script>
-  const themeBtn = document.getElementById('theme-toggle');
-  
-  // Load saved theme
-  if (localStorage.getItem('theme') === 'dark') {
-  document.body.classList.add('dark');
-  themeBtn.textContent = '☀ Light';
-  }
-  
-  themeBtn.addEventListener('click', () => {
-  document.body.classList.toggle('dark');
-  
-  if (document.body.classList.contains('dark')) {
-  themeBtn.textContent = '☀ Light';
-  localStorage.setItem('theme', 'dark');
-  } else {
-  themeBtn.textContent = '🌙 Dark';
-  localStorage.setItem('theme', 'light');
-  }
-  });
-  </script>
-<script>
-const canvas = document.getElementById("background-canvas");
-const ctx = canvas.getContext("2d");
+    const audio = document.getElementById("radio-audio");
+    const playBtn = document.getElementById("play-btn");
+    let isPlaying = false;
 
-let particles = [];
-const colors = ["#00ffe5", "#1adb54", "#ff0077", "#ffaa00", "#0066ff"];
-
-// ✅ Make sure canvas always fills screen
-function resizeCanvas() {
-  canvas.width = window.innerWidth;
-  canvas.height = window.innerHeight;
-}
-window.addEventListener("resize", resizeCanvas);
-resizeCanvas();
-
-class Particle {
-  constructor() {
-    this.reset();
-  }
-  reset() {
-    this.x = Math.random() * canvas.width;
-    this.y = Math.random() * canvas.height;
-    this.size = Math.random() * 4 + 2;
-    this.life = Math.random() * 200 + 100; // total lifespan
-    this.remainingLife = this.life;
-    this.color = colors[Math.floor(Math.random() * colors.length)];
-    this.vx = (Math.random() - 0.5) * 1.0;
-    this.vy = (Math.random() - 0.5) * 1.0;
-  }
-  update() {
-    this.x += this.vx;
-    this.y += this.vy;
-    this.remainingLife--;
-
-    if (this.remainingLife <= 0) {
-      this.reset();
-    }
-  }
-  draw() {
-    const lifeRatio = this.remainingLife / this.life;
-    let alpha = 1;
-
-    // ✅ Smooth fade-in (first 20%) & fade-out (last 20%)
-    if (lifeRatio > 0.8) {
-      alpha = 1 - (lifeRatio - 0.8) * 5;
-    } else if (lifeRatio < 0.2) {
-      alpha = lifeRatio * 5;
-    }
-
-    ctx.beginPath();
-    ctx.arc(this.x, this.y, this.size, 0, Math.PI * 2);
-    ctx.fillStyle = this.hexToRgba(this.color, alpha);
-    ctx.shadowColor = this.color;
-    ctx.shadowBlur = 20 * alpha;
-    ctx.fill();
-    ctx.shadowBlur = 0;
-  }
-  hexToRgba(hex, alpha) {
-    const bigint = parseInt(hex.slice(1), 16);
-    const r = (bigint >> 16) & 255;
-    const g = (bigint >> 8) & 255;
-    const b = bigint & 255;
-    return `rgba(${r},${g},${b},${alpha})`;
-  }
-}
-
-function createParticles(num) {
-  for (let i = 0; i < num; i++) {
-    particles.push(new Particle());
-  }
-}
-createParticles(80); // increase number for denser stars
-
-function animate() {
-  ctx.clearRect(0, 0, canvas.width, canvas.height);
-  particles.forEach(p => {
-    p.update();
-    p.draw();
-  });
-  requestAnimationFrame(animate);
-}
-animate();
-</script>
-<script>
-  if ('serviceWorker' in navigator) {
-    window.addEventListener('load', function() {
-      navigator.serviceWorker.register('sw.js')
-        .then(function(registration) {
-          console.log('ServiceWorker registered with scope:', registration.scope);
-        }).catch(function(error) {
-          console.error('ServiceWorker registration failed:', error);
-        });
+    playBtn.addEventListener("click", () => {
+      if (!isPlaying) {
+        audio.play();
+        playBtn.classList.add("playing");
+        isPlaying = true;
+      } else {
+        audio.pause();
+        playBtn.classList.remove("playing");
+        isPlaying = false;
+      }
     });
-  }
-</script>
+  </script>
+
+  <!-- ================= THEME TOGGLE ================= -->
+  <script>
+    const themeBtn = document.getElementById('theme-toggle');
+
+    // Apply saved theme on load
+    if (localStorage.getItem('theme') === 'dark') {
+      document.body.classList.add('dark');
+      themeBtn.textContent = '☀ Light';
+    }
+
+    // Toggle theme
+    themeBtn.addEventListener('click', () => {
+      document.body.classList.toggle('dark');
+      if (document.body.classList.contains('dark')) {
+        themeBtn.textContent = '☀ Light';
+        localStorage.setItem('theme', 'dark');
+      } else {
+        themeBtn.textContent = '🌙 Dark';
+        localStorage.setItem('theme', 'light');
+      }
+    });
+  </script>
+
+  <!-- ================= BACKGROUND PARTICLES ================= -->
+  <script>
+    const canvas = document.getElementById("background-canvas");
+    const ctx = canvas.getContext("2d");
+    let particles = [];
+    const colors = ["#00ffe5", "#1adb54", "#ff0077", "#ffaa00", "#0066ff"];
+
+    // Resize canvas
+    function resizeCanvas() {
+      canvas.width = window.innerWidth;
+      canvas.height = window.innerHeight;
+    }
+    window.addEventListener("resize", resizeCanvas);
+    resizeCanvas();
+
+    // Particle class
+    class Particle {
+      constructor() { this.reset(); }
+      reset() {
+        this.x = Math.random() * canvas.width;
+        this.y = Math.random() * canvas.height;
+        this.size = Math.random() * 4 + 2;
+        this.life = Math.random() * 200 + 100;
+        this.remainingLife = this.life;
+        this.color = colors[Math.floor(Math.random() * colors.length)];
+        this.vx = (Math.random() - 0.5) * 1.0;
+        this.vy = (Math.random() - 0.5) * 1.0;
+      }
+      update() {
+        this.x += this.vx;
+        this.y += this.vy;
+        this.remainingLife--;
+        if (this.remainingLife <= 0) this.reset();
+      }
+      draw() {
+        const lifeRatio = this.remainingLife / this.life;
+        let alpha = 1;
+        if (lifeRatio > 0.8) alpha = 1 - (lifeRatio - 0.8) * 5;
+        else if (lifeRatio < 0.2) alpha = lifeRatio * 5;
+
+        ctx.beginPath();
+        ctx.arc(this.x, this.y, this.size, 0, Math.PI * 2);
+        ctx.fillStyle = this.hexToRgba(this.color, alpha);
+        ctx.shadowColor = this.color;
+        ctx.shadowBlur = 20 * alpha;
+        ctx.fill();
+        ctx.shadowBlur = 0;
+      }
+      hexToRgba(hex, alpha) {
+        const bigint = parseInt(hex.slice(1), 16);
+        const r = (bigint >> 16) & 255;
+        const g = (bigint >> 8) & 255;
+        const b = bigint & 255;
+        return `rgba(${r},${g},${b},${alpha})`;
+      }
+    }
+
+    // Create particles
+    function createParticles(num) {
+      for (let i = 0; i < num; i++) particles.push(new Particle());
+    }
+    createParticles(80);
+
+    // Animate particles
+    function animate() {
+      ctx.clearRect(0, 0, canvas.width, canvas.height);
+      particles.forEach(p => { p.update(); p.draw(); });
+      requestAnimationFrame(animate);
+    }
+    animate();
+  </script>
+
+  <!-- ================= SERVICE WORKER ================= -->
+  <script>
+    if ('serviceWorker' in navigator) {
+      window.addEventListener('load', function() {
+        navigator.serviceWorker.register('sw.js')
+          .then(reg => console.log('ServiceWorker registered:', reg.scope))
+          .catch(err => console.error('ServiceWorker failed:', err));
+      });
+    }
+  </script>
 </body>
 </html>
