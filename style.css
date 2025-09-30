@@ -47,20 +47,22 @@ h2 {
 
 /* --- Play Button --- */
 .play-button {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
   width: 70px;
   height: 70px;
   border: none;
   border-radius: 50%;
+  background: linear-gradient(135deg, #00ffe5, #1adb54);
   cursor: pointer;
   outline: none;
-  position: relative;
   transition: transform 0.2s, background 0.3s;
-  background: linear-gradient(135deg, #00ffe5, #1adb54);
   box-shadow: 0 0 15px rgba(0, 255, 229, 0.5);
-  z-index: 1;
 }
 
-/* Play Icon */
+/* Play triangle */
 .play-button::before {
   content: '';
   position: absolute;
@@ -74,7 +76,7 @@ h2 {
   transition: all 0.3s ease;
 }
 
-/* Pause Icon */
+/* Pause icon */
 .playing::before {
   border: none;
   background: #000;
@@ -85,13 +87,13 @@ h2 {
   box-shadow: 14px 0 0 #000;
 }
 
-/* Hover Effect */
+/* Hover effect */
 .play-button:hover {
-  transform: scale(1.1);
+  transform: translate(-50%, -50%) scale(1.1);
   background: #1adb54;
 }
 
-/* Pulse Effect */
+/* Pulse effect when playing */
 .playing::after {
   content: '';
   position: absolute;
@@ -266,4 +268,22 @@ body.dark .chat-message strong {
   .chat-container {
     max-width: 350px;
   }
+}
+
+/* Visualizer Script */
+.visualizer-box {
+  position: relative;
+  height: 100px; /* your div height */
+  background: black;
+  border-radius: 8px;
+  overflow: visible;
+  justify-content: center;
+  align-items: center; 
+}
+
+.visualizer-box canvas {
+  width: 100%;
+  height: 100%;
+  border: 2px solid #0f0;
+  border-radius: 8px;
 }
