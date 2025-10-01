@@ -65,11 +65,18 @@ Your browser does not support the audio element.
     
     let isPlaying = false;
     
-    playBtn.addEventListener("click", () => {
+    playBtn.addEventListener("click", async () => {
     if (!isPlaying) {
-    audio.play();
+    try {
+    await audioCtx.resume();   // unlock AudioContext
+    await audio.play();        // play stream
+    draw();                    // start visualizer
     playBtn.classList.add("playing");
     isPlaying = true;
+    } catch (err) {
+    console.error("Play failed:", err);
+    alert("Click again to start the radio.");
+    }
     } else {
     audio.pause();
     playBtn.classList.remove("playing");
