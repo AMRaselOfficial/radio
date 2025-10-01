@@ -21,7 +21,7 @@ app.get('/ping', (req, res) => {
 const ffmpeg = spawn('ffmpeg', [
   '-stream_loop', '-1', // 🔁 Loop forever
   '-re',
-  '-i', 'https://files.catbox.moe/kjun6x.mp3',
+  '-i', 'https://files.catbox.moe/yi2uls.mp3',
   '-f', 'mp3',
   'pipe:1'
 ]);
