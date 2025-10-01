@@ -58,32 +58,6 @@
 Your browser does not support the audio element.
 </audio>
     </center>
-    <script>
-    //play button animation script
-    const audio = document.getElementById("radio-audio");
-    const playBtn = document.getElementById("play-btn");
-    
-    let isPlaying = false;
-    
-    playBtn.addEventListener("click", async () => {
-    if (!isPlaying) {
-    try {
-    await audioCtx.resume();   // unlock AudioContext
-    await audio.play();        // play stream
-    draw();                    // start visualizer
-    playBtn.classList.add("playing");
-    isPlaying = true;
-    } catch (err) {
-    console.error("Play failed:", err);
-    alert("Click again to start the radio.");
-    }
-    } else {
-    audio.pause();
-    playBtn.classList.remove("playing");
-    isPlaying = false;
-    }
-    });
-    </script>
     <div id="notification-box">
       <center><h2>Admin Messages</h2></center>
       <div id="notifications"><!-- Notifications will appear here--></div>
