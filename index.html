@@ -53,7 +53,7 @@
   <canvas id="canvas"></canvas>
   <button id="play-btn" class="play-button"></button>
 </div>
-<audio id="radio-audio" autoplay="autoplay">
+<audio id="radio-audio" crossorigin="anonymous">
 <source src="https://radio-1jz4.onrender.com/live" type="audio/mpeg">
 Your browser does not support the audio element.
 </audio>
@@ -313,13 +313,18 @@ for (let i = 0; i < bufferLength; i++) {
 }
 
 // Play button click
-playBtn2.addEventListener("click", () => {
+playBtn2.addEventListener("click", async () => {
   if (!isPlaying2) {
-    audio2.play();
-    audioCtx.resume();
-    draw();
-    playBtn2.classList.add("playing");
-    isPlaying2 = true;
+    try {
+      await audioCtx.resume();   // ✅ unlock AudioContext
+      await audio2.play();       // ✅ start stream
+      draw();                    // ✅ start visualizer
+      playBtn2.classList.add("playing");
+      isPlaying2 = true;
+    } catch (err) {
+      console.error("Play failed:", err);
+      alert("Click again to start the radio!");
+    }
   } else {
     audio2.pause();
     playBtn2.classList.remove("playing");

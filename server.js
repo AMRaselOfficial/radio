@@ -21,7 +21,7 @@ app.get('/ping', (req, res) => {
 const ffmpeg = spawn('ffmpeg', [
   '-stream_loop', '-1', // 🔁 Loop forever
   '-re',
-  '-i', 'https://files.catbox.moe/qnq5e7.mp3',
+  '-i', 'https://www.dropbox.com/scl/fi/z7yzf4zznh4xuzxukkrqk/Columbina-s-Lullaby-Genshin-Impact.mp3?rlkey=h2pb7htffzzzjhtbas82qci4p&st=zy65fcdv&dl=1',
   '-f', 'mp3',
   'pipe:1'
 ]);
