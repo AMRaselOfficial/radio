@@ -364,6 +364,7 @@ body.dark .chat-message strong {
 
 /* Links inside dropdown */
 .menu-dropdown a {
+  text-align:center;
   display: block;
   padding: 8px 18px;
   border-bottom:1px dashed;
