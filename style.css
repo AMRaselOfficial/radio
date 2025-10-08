@@ -213,7 +213,7 @@ h2 {
 }
 
 .theme-btn:hover {
-  background: #00bfa1;
+  background: #1adb54;
   transform: scale(1.05);
 }
 
@@ -286,4 +286,121 @@ body.dark .chat-message strong {
   height: 100%;
   border: 2px solid #0f0;
   border-radius: 8px;
+}
+/* ================= MENU BUTTON ================= */
+.menu-container {
+  position: fixed;
+  top: 15px;
+  left: 15px;
+  z-index: 1000;
+}
+.menu-btn {
+  width: 45px;
+  height: 45px;
+  border: none;
+  border-radius: 50%;
+  background: #00ffe5;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  transition: background 0.3s, transform 0.3s;
+  position: relative;
+}
+.menu-btn:hover {
+  background: #1adb54;
+}
+.menu-btn .bar {
+  position: absolute;
+  width: 24px;
+  height: 3px;
+  background-color: #000;
+  border-radius: 3px;
+  transition: all 0.3s ease;
+}
+
+.menu-btn .bar:nth-child(1) {
+  transform: translateY(-8px);
+}
+
+.menu-btn .bar:nth-child(2) {
+  transform: translateY(0);
+}
+
+.menu-btn .bar:nth-child(3) {
+  transform: translateY(8px);
+}
+
+/* Active state - turns into × */
+.menu-btn.active .bar:nth-child(1) {
+  transform: rotate(45deg);
+}
+
+.menu-btn.active .bar:nth-child(2) {
+  opacity: 0;
+}
+
+.menu-btn.active .bar:nth-child(3) {
+  transform: rotate(-45deg);
+}
+.menu-dropdown {
+  position: absolute;
+  top: 50px;
+  left: 0;
+  background: rgba(255, 255, 255, 0.25);           /* translucent base */
+  border: 1px solid rgba(255, 255, 255, 0.3);
+  border-radius: 12px;
+  min-width: 100px;
+  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.2);
+  backdrop-filter: blur(12px) saturate(180%);
+  -webkit-backdrop-filter: blur(12px) saturate(180%);
+  overflow: hidden;
+  opacity: 0;
+  transform: translateY(-10px);
+  pointer-events: none;
+  transition: all 0.35s ease;
+  z-index: 1000;
+}
+
+/* Links inside dropdown */
+.menu-dropdown a {
+  display: block;
+  padding: 8px 18px;
+  border-bottom:1px dashed;
+  text-decoration: none;
+  color: #000;
+  font-size: 14px;
+  font-weight: 600;
+  transition: background 0.3s, color 0.3s;
+}
+
+/* Hover effect */
+.menu-dropdown a:hover {
+  background: rgba(0, 255, 229, 0.2);
+  color: #000;
+}
+
+/* When active (visible) */
+.menu-dropdown.show {
+  opacity: 1;
+  transform: translateY(0);
+  pointer-events: all;
+}
+
+/* ====== Dark Mode Glass ====== */
+body.dark .menu-dropdown {
+  background: rgba(30, 30, 30, 0.55);
+  border: 1px solid rgba(0, 255, 229, 0.3);
+  backdrop-filter: blur(14px) saturate(180%);
+  -webkit-backdrop-filter: blur(14px) saturate(180%);
+  box-shadow: 0 8px 25px rgba(0, 255, 229, 0.15);
+}
+
+body.dark .menu-dropdown a {
+  color: #fff;
+}
+
+body.dark .menu-dropdown a:hover {
+  background: rgba(0, 255, 229, 0.25);
+  color: #00ffe5;
 }

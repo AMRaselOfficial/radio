@@ -45,6 +45,22 @@
   </head>
 <body>
   <canvas id="background-canvas"></canvas>
+  <!-- Menu Button -->
+  <div class="menu-container">
+  <button id="menu-btn" class="menu-btn">
+  <span class="bar"></span>
+  <span class="bar"></span>
+  <span class="bar"></span>
+  </button>
+  <div id="menu-dropdown" class="menu-dropdown">
+  <a href="https://www.facebook.com/RaselEdit" target="_blank">Facebook</a>
+  <a href="https://www.instagram.com/RaselEdit">Instagram</a>
+  <a href="https://www.youtube.com/@AMRaselOfficial">YouTube</a>
+  <a href="https://tiktok.com/@RaselEdits">TikTok</a>
+  <a href="mailto:info.amrasel@gmail.com">Contact</a>
+  <a href="https://amraselofficial.github.io/main/" target="_blank">Portfolio</a>
+  </div>
+  </div>
   <button id="theme-toggle" class="theme-btn">🌙 Dark</button>
   <div class="chat-container">
     <h1>AM Rasel's Radio</h1>
@@ -331,6 +347,24 @@ playBtn2.addEventListener("click", async () => {
     isPlaying2 = false;
   }
 });
+</script>
+<!-- ================= DROPDOWN MENU ================= -->
+<script>
+  const menuBtn = document.getElementById("menu-btn");
+  const menuDropdown = document.getElementById("menu-dropdown");
+
+  menuBtn.addEventListener("click", (e) => {
+    e.stopPropagation();
+    menuBtn.classList.toggle("active");
+    menuDropdown.classList.toggle("show");
+  });
+
+  window.addEventListener("click", (e) => {
+    if (!menuBtn.contains(e.target) && !menuDropdown.contains(e.target)) {
+      menuDropdown.classList.remove("show");
+      menuBtn.classList.remove("active");
+    }
+  });
 </script>
 </body>
 </html>
