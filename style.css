@@ -196,14 +196,10 @@ h2 {
   background: #1adb54;
 }
 
-/* ================= THEME TOGGLE ================= */
+/* ================= THEME TOGGLE Button================= */
 .theme-btn {
-  position: fixed;
-  top: 15px;
-  right: 15px;
-  padding: 8px 14px;
+  padding: 8px 55px;
   border: none;
-  border-radius: 20px;
   cursor: pointer;
   background: #00ffe5;
   color: #000;
@@ -214,7 +210,6 @@ h2 {
 
 .theme-btn:hover {
   background: #1adb54;
-  transform: scale(1.05);
 }
 
 /* ================= DARK MODE ================= */

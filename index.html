@@ -60,9 +60,9 @@
   <a href="mailto:info.amrasel@gmail.com">Contact</a>
   <a href="https://amraselofficial.github.io/main/" target="_blank">1.Portfolio</a>
   <a href="https://amraselofficial.github.io/index/">2.Portfolio</a>
+  <center><button id="theme-toggle" class="theme-btn">Dark</button></center>
   </div>
   </div>
-  <button id="theme-toggle" class="theme-btn">🌙 Dark</button>
   <div class="chat-container">
     <h1>AM Rasel's Radio</h1>
     <center><div class="audio-player">
@@ -163,17 +163,17 @@ Your browser does not support the audio element.
   // Load saved theme
   if (localStorage.getItem('theme') === 'dark') {
   document.body.classList.add('dark');
-  themeBtn.textContent = '☀ Light';
+  themeBtn.textContent = 'Light';
   }
   
   themeBtn.addEventListener('click', () => {
   document.body.classList.toggle('dark');
   
   if (document.body.classList.contains('dark')) {
-  themeBtn.textContent = '☀ Light';
+  themeBtn.textContent = 'Light';
   localStorage.setItem('theme', 'dark');
   } else {
-  themeBtn.textContent = '🌙 Dark';
+  themeBtn.textContent = 'Dark';
   localStorage.setItem('theme', 'light');
   }
   });
