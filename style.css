@@ -135,7 +135,7 @@ h2 {
   background-color: #ccc;
   border-left: 2px solid #ccc;
   border-radius: 5px;
-  height: 35px;
+  height: 50px;
   overflow-y: auto;
   display: flex;
   flex-direction: column-reverse;
